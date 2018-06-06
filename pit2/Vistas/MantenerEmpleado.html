@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>
+        Intranet
+    </title>
+    <!-- CSS  -->
+    <style>
+    	td, th{padding: 1px !important;}
+    </style>
+    <link rel="stylesheet" type="text/css" href="./Resources/fontawesome-all.css">
+    <link href="./Resources/materialize/css/fonts.css" rel="stylesheet"/>
+    <link href="./Resources/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./Resources/vendors/DataTables-1.10.16/css/datatables.min.css" rel="stylesheet"/>
+
+    <!-- JQUERY  -->
+    <script src="./Resources/vendors/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+	<div style="padding: 1%; height: 100%;">
+		<div style="background-color: white; border-radius: 5px; border: 1px solid rgb(201, 201, 201);">
+			<script src="./Bloque/barraInternaHTML.js"></script>
+				<div class="row">
+					<div class="col s12">
+						<h1 class="center-align">Mantenimiento Empleado</h1>						
+					</div>
+
+					<div class="col s12">
+						<button type="button" class="waves-effect waves-light btn" id="btnCrearEmpleado">Crear Empleado</button>
+						<br/><br/>
+					</div>
+
+					<div class="col s12">
+						<table id="tbEmpleado">
+							<thead>
+								<th>#</th>
+								<th>Empleado</th>
+								<th>Documento</th>
+								<th>Estado Civil</th>								
+								<th>Correo</th>
+								<th>Usuario</th>
+								<th>Estado</th>
+								<th></th>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+    <div id="modalCrearEmpleado" class="modal modal-fixed-footer">
+    	<form id="formularioCrearEmpleado">
+	    	<div class="modal-content">
+	    		<h4>Crear Empleado</h4>	    		
+	    			<div class="row">
+	    				<div class="col s12">	    					
+							<div class="col s4">
+								<label for="nombre">Nombre:</label>
+								<input type="text" class="form-control" id="nombreC" required>
+							</div>
+
+							<div class="col s4">
+								<label for="apellido_p">Apellido Paterno:</label>
+								<input type="text" class="form-control" id="apellido_pC" required>
+							</div>
+
+							<div class="col s4">
+								<label for="apellido_m">Apellido Materno:</label>
+								<input type="text" class="form-control" id="apellido_mC" required>
+							</div>
+
+							<div class="col s4">
+								<label>Tipo de Documento</label>
+								<select id="idTipoDocumentoC" class="browser-default idTipoDocumento"></select>
+							</div>
+
+							<div class="col s4">
+								<label for="nroDocumento">Nro de Documento:</label>
+								<input type="number" class="form-control" id="nrodocumentoC" required>
+							</div>
+
+							<div class="col s4">
+								<label for="correo">Correo:</label>
+								<input type="email" class="form-control" id="correoC" required>
+							</div>
+
+							<div class="col s4">
+								<div class="col s12">
+									<label>Estado Civil</label>
+									<select id="idEstadoCivilC" class="browser-default idEstadoCivil"></select>
+								</div>
+							</div>
+	    				</div>
+	    			</div>
+	    	</div>
+
+		    <div class="modal-footer">
+		      <button type="submit" class="waves-effect waves-green btn-flat ">Crear Nuevo</button>
+		    </div>
+	    </form>
+    </div>
+
+    <div id="modalActualizarEmpleado" class="modal modal-fixed-footer">
+    	<form id="formularioActualizarEmpleado">
+	    	<div class="modal-content">
+	    		<h4>Actualizar Empleado</h4>	    		
+	    		<div class="row">
+	    			<div class="col s12">
+	    				<div class="col s4">
+	    					<label for="nombre">Nombre:</label>
+	    					<input type="text" class="form-control" id="nombreA" required>
+	    					<input type="hidden" class="form-control" id="idEmpleadoA" required>
+	    				</div>
+
+	    				<div class="col s4">
+	    					<label for="apellido_p">Apellido Paterno:</label>
+	    					<input type="text" class="form-control" id="apellido_pA" required>
+	    				</div>
+
+	    				<div class="col s4">
+	    					<label for="apellido_m">Apellido Materno:</label>
+	    					<input type="text" class="form-control" id="apellido_mA" required>
+	    				</div>
+
+	    				<div class="col s4">
+	    					<label>Tipo de Documento</label>
+	    					<select id="idTipoDocumentoA" class="browser-default idTipoDocumento"></select>
+	    				</div>
+
+	    				<div class="col s4">
+	    					<label for="nroDocumento">Nro de Documento:</label>
+	    					<input type="number" class="form-control" id="nrodocumentoA" required>
+	    				</div>
+
+	    				<div class="col s4">
+	    					<label>Estado Civil</label>
+	    					<select id="idEstadoCivilA" class="browser-default idEstadoCivil"></select>
+	    				</div>
+
+	    				<div class="col s8">
+	    					<label for="correo">Correo:</label>
+	    					<input type="email" class="form-control" id="correoA" required>
+	    				</div>
+
+	    				<div class="col s4">
+	    					<label>Estado</label>
+	    					<select id="idEstadoA" class="browser-default">
+	    						<option value="1">Vigente</option>
+	    						<option value="2">No Vigente</option>
+	    					</select>
+	    				</div>
+	    			</div>
+	    		</div>
+	    	</div>
+
+		    <div class="modal-footer">
+		      <button type="submit" class="waves-effect waves-green btn-flat ">Actualizar</button>
+		    </div>
+	    </form>
+    </div>
+
+    <div id="modalCrearUsuario" class="modal modal-fixed-footer">
+    	<form id="formularioCrearUsuario">
+	    	<div class="modal-content">
+	    		<h4>Crear Usuario a <br><span id="nombreEmpleadoC"></span></h4>
+	    			<div class="row">
+	    				<div class="col s12">	    					
+							<div class="col s12">
+								<label for="usuarioC">Usuario:</label>
+								<input type="text" class="form-control" id="usuarioC" required>
+								<input type="hidden" class="form-control" id="idEmpleadoUC" required>
+							</div>
+
+							<div class="col s12">
+								<label for="claveC">Clave:</label>
+								<input type="password" class="form-control" id="claveC" required>
+							</div>
+
+							<div class="col s12">
+								<label>Rol</label>
+								<select id="idRolC" class="browser-default idRol" required></select>
+							</div>
+	    				</div>
+	    			</div>
+	    	</div>
+
+		    <div class="modal-footer">
+		      <button type="submit" class="waves-effect waves-green btn-flat ">Crear Nuevo</button>
+		    </div>
+	    </form>
+    </div>
+
+    <div id="modalActualizarUsuario" class="modal modal-fixed-footer">
+    	<form id="formularioActualizarUsuario">
+	    	<div class="modal-content">
+	    		<h4>Actualizar Usuario de <br><span id="nombreEmpleadoA"></span></h4>
+	    			<div class="row">
+	    				<div class="col s12">	    					
+							<div class="col s12">
+								<label for="usuarioA">Usuario:</label>
+								<input type="text" class="form-control" id="usuarioA" required>
+								<input type="hidden" class="form-control" id="idEmpleadoUA" required>
+								<input type="hidden" class="form-control" id="idUsuarioA" required>
+							</div>
+
+							<div class="col s12">
+								<label for="claveA">Clave:</label>
+								<input type="password" class="form-control" id="claveA" required>
+							</div>
+
+							<div class="col s12">
+								<label>Rol</label>
+								<select id="idRolA" class="browser-default idRol"></select>
+							</div>
+	    				</div>
+	    			</div>
+	    	</div>
+
+		    <div class="modal-footer">
+		      <button type="submit" class="waves-effect waves-green btn-flat ">Actualizar</button>
+		    </div>
+	    </form>
+    </div>
+
+	<!--  Scripts-->
+	<script src="./Resources/materialize/js/materialize.js"></script>
+	<script src="./Resources/vendors/DataTables-1.10.16/js/datatables.min.js"></script>
+	<script src="./Bloque/barraInternaJS.js"></script>	
+	<script src="./Bloque/MantenerEmpleado.js"></script>	
+</body>
+</html>

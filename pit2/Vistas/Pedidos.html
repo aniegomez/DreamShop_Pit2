@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>
+        DreamShop
+    </title>
+    <!-- CSS  -->
+    <link rel="stylesheet" type="text/css" href="./Resources/fontawesome-all.css">
+    <link href="./Resources/materialize/css/fonts.css" rel="stylesheet"/>
+    <link href="./Resources/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./Resources/vendors/DataTables-1.10.16/css/datatables.min.css" rel="stylesheet"/>
+
+    <!-- JQUERY  -->
+    <script src="./Resources/vendors/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+	<div style="padding: 1%; height: 100%;">
+		<div style="background-color: white; border-radius: 5px; border: 1px solid rgb(201, 201, 201);">
+			<script src="./Bloque/barraInternaHTML.js"></script>
+
+			<div class="col s12">
+				<div class="row">
+					<div class="col s12">
+						<h1 class="center-align">Pedidos</h1>					
+						<br/>
+						<br/>
+					</div>
+
+					<div class="col s12 m4 l3">
+						Estado
+						<select class="browser-default filtros" id="estadoFiltro">
+							<option value="0">[Todos]</option>
+							<option value="3">Pendiente</option>
+							<option value="4">Despachado</option>
+							<option value="5">Anulado</option>
+							<option value="6">En Curso</option>
+							<option value="7">Entregado</option>
+							<option value="8">Rechazado</option>
+						</select>
+					</div>
+
+					<div class="col s12 m4 l3">
+						Fecha Pedido
+						<input type="date" id="fechaFiltro" class="filtros">
+					</div>
+
+					<div class="col s12 m4 l3">
+						Cliente
+						<input type="text" id="clienteFiltro" class="filtros">
+					</div>
+
+					<div class="col s12">
+						<table id="tbMisPedidos">
+							<thead>
+								<th>#</th>
+								<th>Fecha<br>Pedido</th>
+								<th>Total<br>Compra</th>
+								<th>Estado<br>Pedido</th>
+								<th>Datos del Cliente</th>
+								<th colspan="2"><button type="button" class="waves-effect waves-light btn" id="cambiarEstado">Cambiar Estado</button></th>
+
+							</thead>
+							<tbody></tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="modalDetallePedido" class="modal modal-fixed-footer" style="width: 90% !important;">
+		<div class="modal-content">
+			<h4>Detalle Pedido</h4>
+			
+			<table id="tbDetallePedido">
+				<thead>
+					<th>#</th>
+					<th>Categoría</th>
+					<th>Marca</th>
+					<th>Producto</th>
+					<th>Color</th>
+					<th>Precio</th>
+					<th>Cantidad</th>
+					<th>Sub Total</th>
+					<th>Descuento</th>
+					<th>Total</th>
+				</thead>
+				<tbody></tbody>	
+			</table>
+		</div>
+		<div class="modal-footer">
+			<a href="javascript:;" class="modal-action modal-close waves-effect waves-green btn-flat ">Cerrar</a>
+		</div>
+	</div>
+
+	<div id="modalCambiarEstado" class="modal modal-fixed-footer" style="width: 90% !important;">
+		<div class="modal-content">
+			<h4>Detalle Pedido</h4>
+			
+			<div class="col s12">
+				Estado
+				<select class="browser-default" id="estadoNuevo">
+					<option value="3">Pendiente</option>
+					<option value="4">Despachado</option>
+					<option value="5">Anulado</option>
+					<option value="6">En Curso</option>
+					<option value="7">Entregado</option>
+					<option value="8">Rechazado</option>
+				</select>
+			</div>
+		</div>
+		<div class="modal-footer">
+			<button id="btnCambiarEstado" type="button" class="waves-effect waves-green btn-flat ">Cambiar Estado</button>
+		</div>
+	</div>
+
+	<!--  Scripts-->
+	<script src="./Resources/materialize/js/materialize.js"></script>
+	<script src="./Resources/vendors/DataTables-1.10.16/js/datatables.min.js"></script>
+	<script src="./Bloque/barraInternaJS.js"></script>
+	<script src="./Bloque/Pedidos.js"></script>
+</body>
+</html>

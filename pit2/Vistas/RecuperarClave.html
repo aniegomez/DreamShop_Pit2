@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>
+        DreamShop
+    </title>
+    <!-- CSS  -->
+    <link rel="stylesheet" type="text/css" href="./Resources/fontawesome-all.css">
+    <link href="./Resources/materialize/css/fonts.css" rel="stylesheet"/>
+    <link href="./Resources/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./Resources/vendors/DataTables-1.10.16/css/datatables.min.css" rel="stylesheet"/>
+
+    <!-- JQUERY  -->
+    <script src="./Resources/vendors/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+	<div style="padding: 1%; height: 100%;">
+		<div style="background-color: white; border-radius: 5px; border: 1px solid rgb(201, 201, 201);">
+			<script src="./Bloque/barraNavegacionHTML.js"></script>
+
+			<div class="col s12">
+				<div class="row">
+					<div class="col s12">
+						<h1 class="col s12 center-align">Recuperar Clave</h1><br/>
+
+						<div class="col s4"></div>
+
+						<div class="col s4">
+							<br/>
+
+							<form id="formularioRecuperarClave">
+								<div class="form-group">
+									<label for="email">Correo:</label>
+									<input type="email" class="form-control" id="correo" required>
+								</div>
+
+								<div class="col s12">
+									<button type="submit" id="btnRecuperarClave" class="waves-effect waves-light btn">RECUPERAR CLAVE </button>
+								</div>	
+							</form>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+	</div>
+
+	<!--  Scripts-->
+	<script src="./Resources/materialize/js/materialize.js"></script>
+	<script src="./Resources/vendors/DataTables-1.10.16/js/datatables.min.js"></script>
+	<script src="./Bloque/barraNavegacionJS.js"></script>
+	<script src="./Bloque/RecuperarClave.js"></script>
+</body>
+</html>
