@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+    DreamShop
+  </title>
+  <!-- CSS  -->
+  <link rel="stylesheet" type="text/css" href="./Resources/fontawesome-all.css">
+  <link href="./Resources/materialize/css/fonts.css" rel="stylesheet"/>
+  <link href="./Resources/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+  <link href="./Resources/vendors/DataTables-1.10.16/css/datatables.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- JQUERY  -->
+  <script src="./Resources/vendors/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+	<div style="padding: 1%; height: 100%;">
+		<div style="background-color: white; border-radius: 5px; border: 1px solid rgb(201, 201, 201);">
+			<script src="./Bloque/barraNavegacionHTML.js"></script>
+
+			<div class="col s12">
+				<div class="row">
+					<div class="col s12">
+						<h1 class="center-align">Realizar Pedido <label> (Contra Entrega)</label></h1>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col s12 m9">
+
+						<div class="col s12">
+							<h5>Dirección de entrega</h5>
+							<a class="waves-effect waves-light btn modal-trigger" href="#modalNuevaDireccion">Nueva</a>
+							<button id="btnExistentes" class="waves-effect waves-light btn">Existentes</button>
+						</div>
+						<div class="col s12">
+							<input id="idDireccion"	type="hidden"><br>
+             
+							<div class="row">
+								<span class="col s3 m2">Dirección:</span>
+								<input class="col s7" id="direccion" value="" type="text" readonly>
+							</div>
+
+							<div class="row">
+								<span class="col s3 m2">Ubigeo:</span>
+								<input class="col s7" id="ubigeo" value="" type="text" readonly>
+							</div>
+
+							<div class="row">
+								<span class="col s3 m2">Referencia:</span>
+								<input class="col s7" id="referencia" value="" type="text" readonly>
+							</div>
+						</div>
+					</div>
+
+					<div class="col s12 m3">
+						<div class="col s12">
+							<h5>Total Pedido:</h5>
+							<h5>S/. <strong id="total"></strong></h5>							
+							<button id="confirmar" type="button" class="waves-effect waves-light btn">Confirmar</button>
+           </br></br>
+         </div>
+       </div>
+     </div>
+   </div>
+ </div>
+</div>  	
+
+<div id="modalNuevaDireccion" class="modal modal-fixed-footer" style="min-height: 85%;">
+  <form id="formularioNuevaDireccion">
+   <div class="modal-content">
+    <h4 style="margin-bottom: 30px;">Registrar Dirección</h4>  			
+    <div class="input-field">
+     <label>Dirección</label>
+     <input type="text" id="txtDireccion" required="">
+   </div>
+
+   <div class="input-field">
+     <label>Referencia</label>
+     <input type="text" id="txtReferencia" required="">
+   </div>
+
+   <div>
+     <label>Departamento</label>
+     <select id="cboDepartamento" required class="browser-default">
+      <option value="" disabled selected>[Seleccione]</option>
+    </select>  					
+  </div>
+
+  <div>
+   <label>Provincia</label>
+   <select id="cboProvincia" required class="browser-default">
+    <option value="" disabled selected>[Seleccione]</option>
+  </select>  					
+</div>
+
+<div>
+ <label>Distrito</label>
+ <select id="cboDistrito" required class="browser-default">
+  <option value="" disabled selected>[Seleccione]</option>
+</select>  					
+</div>
+</div>
+
+<div class="modal-footer">
+  <button type="submit" class="waves-effect waves-green btn-flat">Registrar</button>
+</div>
+</form>
+</div>
+
+<div id="modalListaDireccion" class="modal">
+  <div class="modal-content">
+   <h4>Escoger Dirección</h4>
+
+   <table id="tbDireccion">
+    <thead>
+     <th>#</th>
+     <th>Dirección</th>
+     <th>Ubigeo</th>
+     <th>Referencia</th>
+     <th></th>
+   </thead>
+   <tbody>
+   </tbody>
+ </table>
+</div>
+
+<div class="modal-footer">
+ <button type="button" id="btnSeleccionarDireccion" class="waves-effect waves-green btn-flat">Seleccionar</button>
+</div>
+</div>  	
+
+
+<!--  Scripts-->
+<script src="./Resources/materialize/js/materialize.js"></script>
+<script src="./Resources/vendors/DataTables-1.10.16/js/datatables.min.js"></script>
+<script src="./Bloque/barraNavegacionJS.js"></script>
+<script src="./Bloque/RealizarPedido.js"></script>
+</body>
+</html>

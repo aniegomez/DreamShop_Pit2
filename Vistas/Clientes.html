@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>
+        Intranet
+    </title>
+    <!-- CSS  -->
+    <style>
+    	td, th{padding: 1px !important;}
+    </style>
+    <link rel="stylesheet" type="text/css" href="./Resources/fontawesome-all.css">
+    <link href="./Resources/materialize/css/fonts.css" rel="stylesheet"/>
+    <link href="./Resources/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./Resources/vendors/DataTables-1.10.16/css/datatables.min.css" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- JQUERY  -->
+    <script src="./Resources/vendors/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+	<div style="padding: 1%; height: 100%;">
+		<div style="background-color: white; border-radius: 5px; border: 1px solid rgb(201, 201, 201);">
+			<script src="./Bloque/barraInternaHTML.js"></script>
+				<div class="row">
+					<div class="col s12">
+						<h1 class="center-align">Clientes			
+							<a href="javascript:;" id="reportePDF" style="margin-left: 30px;" >
+								<i class="fas fa-file-pdf"  style="font-size: 30px !important; color: red"></i>
+							</a>
+						</h1>						
+					</div>
+
+					<div class="col s12">
+						<table id="tbClientes">
+							<thead>
+								<th>#</th>
+								<th>Cliente</th>
+								<th>Documento</th>
+								<th>Pedidos</th>
+								<th>Estado</th>
+								<th>Teléfono</th>
+								<th>Correo</th>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="modalPedidos" class="modal modal-fixed-footer" style="width: 90% !important; min-height: 85% !important;">
+		<div class="modal-content">
+			<h4>Pedidos de <span id="nombreCliente"></span>
+				<a href="javascript:;" id="reportePDF1" style="margin-left:30px">
+					<i class="fas fa-file-pdf"  style="font-size: 30px !important; color: red"></i>
+				</a>
+			</h4>
+
+			<table id="tbPedidos">
+				<thead>
+					<th>#</th>
+					<th>Fecha<br>Pedido</th>
+					<th>Total<br>Compra</th>
+					<th>Estado<br>Pedido</th>
+					<th></th>
+				</thead>
+				<tbody></tbody>	
+			</table>					
+		</div>
+		<div class="modal-footer" style="height: 80px !important; bottom: 50px; border-top: 10px solid rgba(0,0,0,0.1);">
+			<div class="row">
+				<div class="col s12">
+					<h5 align="left">Detalle Pedido
+						<a href="javascript:;" id="reportePDF2" style="margin-left:30px">
+							<i class="fas fa-file-pdf"  style="font-size: 30px !important; color: red"></i>
+						</a>
+					</h5>
+
+					<table id="tbDetallePedido">
+						<thead>
+							<th>#</th>
+							<th>Categoría</th>
+							<th>Marca</th>
+							<th>Producto</th>
+							<th>Color</th>
+							<th>Precio</th>
+							<th>Cantidad</th>
+							<th>Sub Total</th>
+							<th>Descuento</th>
+							<th>Total</th>
+						</thead>
+						<tbody></tbody>	
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--  Scripts-->
+	<script src="./Resources/materialize/js/materialize.js"></script>
+	<script src="./Resources/vendors/DataTables-1.10.16/js/datatables.min.js"></script>
+	<script src="./Bloque/barraInternaJS.js"></script>	
+	<script src="./Bloque/Clientes.js"></script>
+	<script src='./Resources/pdfmake/pdfmake.min.js'></script>
+ 	<script src='./Resources/pdfmake/vfs_fonts.js'></script>
+ 	<script src="./Reportes/reporteClientes.js"></script>	
+ 	<script src="./Reportes/reportePedidos(Cliente).js"></script>
+	<script src="./Reportes/reporteDetallePedido(Cliente).js"></script>
+
+</body>
+</html>

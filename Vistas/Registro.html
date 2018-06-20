@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>
+        DreamShop
+    </title>
+    <!-- CSS  -->
+    <link rel="stylesheet" type="text/css" href="./Resources/fontawesome-all.css">
+    <link href="./Resources/materialize/css/fonts.css" rel="stylesheet"/>
+    <link href="./Resources/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./Resources/vendors/DataTables-1.10.16/css/datatables.min.css" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- JQUERY  -->
+    <script src="./Resources/vendors/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+	<div style="padding: 1%; height: 100%;">
+		<div style="background-color: white; border-radius: 5px; border: 1px solid rgb(201, 201, 201);">
+			<script src="./Bloque/barraNavegacionHTML.js"></script>
+			
+			<section class="section section-contact scrollspy">
+			<div class="container">
+				<div class="row">
+				<div class="col s12 m6" >
+				
+						<h1 class="col s12 center-align cyan-text">Registro de Cliente</h1>
+						<br/>
+						<br/>      
+						<form id="formularioRegistro">
+							<div class="col s12">
+								<label for="UserName">Nombre:</label>
+								<input type="text" pattern="[a-zA-Z]+(\s[a-zA-Z]){0,}" title ="Ingrese Nombre Valido" class="form-control" id="nombre" required>
+							</div>
+
+							<div class="col s12">
+								<label for="UserName">Apellido Paterno:</label>
+								<input type="text" pattern="[a-zA-Z]+(\s[a-zA-Z]){0,}" title ="Ingrese Apellido Paterno Valido" class="form-control" id="apellido_p" required>
+							</div>
+
+							<div class="col s12">
+								<label for="UserName">Apellido Materno:</label>
+								<input type="text" pattern="[a-zA-Z]+(\s[a-zA-Z]){0,}" title ="Ingrese Apellido Materno Valido" class="form-control" id="apellido_m" required>
+							</div>
+
+							<div class="col s12">
+								<label>Tipo de Documento</label>
+								<select id="idTipoDocumento" class="browser-default" required>
+								</select>
+							</div>
+
+							<div class="col s12">
+								<label for="UserName">Nro de Documento:</label>
+								<input type="text" maxlength="8" pattern="[0-9]{8}" title ="Ingrese documento valido (8 digitos)" class="form-control" id="nroDocumento" required>
+							</div>
+
+							<div class="col s12">
+								<label for="email">Correo:</label>
+								<input type="email" class="form-control" id="correo" required>
+							</div>
+
+							<div class="col s12">
+								<label for="pwd">Clave:</label>
+								<input type="password" minlength="6" class="form-control" id="clave" required>
+							</div>
+
+							<div class="col s12">
+								<label for="pwd">Confirme su Clave</label>
+								<input type="password" minlength="6" class="form-control" id="confirmarClave" required>
+							</div>
+
+							<div class="col s12">
+								<div class="col s12">
+									<label>Estado Civil</label>
+									<select id="idEstadoCivil" class="browser-default" required>
+									</select>
+								</div>
+							</div>
+
+							<div class="col s12" align="center">
+								<button type="submit" class="btn waves-effect waves-light">Registrarse
+									<i class="material-icons right">send</i>
+								</button>
+							</div>
+						</form>
+			</div>
+			<div class="col s12 m6">
+				<div class="card-panel cyan darken-1 white-text center">
+				  <i class="material-icons medium">email</i>
+				  <h5>Contactanos</h5>
+				  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repellendus sed praesentium delectus. Sit, mollitia
+					quo. Veniam repellat voluptas ipsum doloremque?</p>
+					<p>dreamteam.dreamshop@gmail.com</p>
+				</div>
+			</br>
+				<ul class="collection with-header">
+				  <li class="collection-header">
+					<h4>Ubicacion</h4>
+				  </li>
+				  <li class="collection-item">DreamShop</li>
+				  <li class="collection-item">555 Lima, Aula: A-102</li>
+				  <li class="collection-item">San Diego city, 55555</li>
+
+				</ul>
+			</br>
+			</br>
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3902.773583946744!2d-77.0632222851491!3d-11.99016274411472!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105ce53c69e3575%3A0x586e76dff7534a44!2sCibertec+Sede+Norte!5e0!3m2!1ses!2spe!4v1529517498463" width="535" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+				
+
+			  </div>
+
+			  </div>
+			  </div>
+		</section>
+
+	
+	
+
+ 
+</div>
+</div>
+ <!-- Footer -->
+<footer class="section cyan darken-1 white-text center">
+		<p class="flow-text">DreamShop &copy; 2018</p>
+	  </footer>
+	<!--  Scripts-->
+	<script src="./Resources/materialize/js/materialize.js"></script>
+	<script src="./Resources/vendors/DataTables-1.10.16/js/datatables.min.js"></script>
+	<script src="./Bloque/barraNavegacionJS.js"></script>
+	<script src="./Bloque/Registro.js"></script>
+</body>
+</html>
