@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>
+        Intranet
+    </title>
+    <!-- CSS  -->
+    <style>
+    	td, th{padding: 1px !important;}
+    </style>
+    <link rel="stylesheet" type="text/css" href="./Resources/fontawesome-all.css">
+    <link href="./Resources/materialize/css/fonts.css" rel="stylesheet"/>
+    <link href="./Resources/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./Resources/vendors/DataTables-1.10.16/css/datatables.min.css" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- JQUERY  -->
+    <script src="./Resources/vendors/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+	<div style="padding: 1%; height: 100%;">
+		<div style="background-color: white; border-radius: 5px; border: 1px solid rgb(201, 201, 201);">
+			<script src="./Bloque/barraInternaHTML.js"></script>
+				<div class="row">
+					<div class="col s12">
+						<h1 class="col s12 center-align cyan-text" style="font-family: 'Playfair Display', serif;" >Mantenimiento Categoría</h1>						
+					</div>
+
+					<div class="col s10">
+						<button type="button" class="waves-effect waves-light btn" id="btnCrearCategoria">Crear Categoría</button>
+						<br/><br/>
+					</div>
+					<div class="col s2">
+						<a href="javascript:;" id="reportePDF">
+							<i class="fas fa-file-pdf"  style="font-size: 30px !important; color: red"></i>
+						</a>
+						<br/><br/>
+					</div>
+
+					<div class="col s12">
+						<table id="tbCategoria">
+							<thead>
+								<th>#</th>
+								<th>Categoría</th>
+								<th></th>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+    <div id="modalCrearCategoria" class="modal modal-fixed-footer">
+    	<form id="formularioCrearCategoria">
+	    	<div class="modal-content">
+	    		<h4>Crear Producto</h4>	    		
+	    			<div class="row">
+	    				<div class="col s12">	    					
+							<div class="input-field">
+								<label>Categoría</label>
+								<input type="text" pattern="[a-zA-Z]+(\s[a-zA-Z0-9]){0,}" title ="Ingrese Categoria Valida"  id="txtDescripcionC" name="txtCategoria" required="">								
+							</div>
+	    				</div>
+	    			</div>
+	    	</div>
+
+		    <div class="modal-footer">
+		      <button type="submit" class="waves-effect waves-green btn-flat ">Crear Nuevo</button>
+		    </div>
+	    </form>
+    </div>
+
+    <div id="modalActualizarCategoria" class="modal modal-fixed-footer">
+    	<form id="formularioActualizarCategoria">
+	    	<div class="modal-content">
+	    		<h4>Actualizar Categoría</h4>	    		
+	    			<div class="row">
+	    				<div class="col s12">
+							<div class="input-field">
+								<label>Categoría</label>
+								<input type="text" pattern="[a-zA-Z]+(\s[a-zA-Z0-9]){0,}" title ="Ingrese Categoria Valida" id="txtDescripcionA" name="txtCategoria" required="">
+								<input type="hidden" id="txtIdCategoriaA">
+							</div>
+	    				</div>
+	    			</div>
+	    	</div>
+
+		    <div class="modal-footer">
+		      <button type="submit" class="waves-effect waves-green btn-flat ">Actualizar</button>
+		    </div>
+	    </form>
+    </div>
+
+	<!--  Scripts-->
+	<script src="./Resources/materialize/js/materialize.js"></script>
+	<script src="./Resources/vendors/DataTables-1.10.16/js/datatables.min.js"></script>
+	<script src="./Bloque/barraInternaJS.js"></script>	
+	<script src="./Bloque/MantenerCategoria.js"></script>	
+	<script src='./Resources/pdfmake/pdfmake.min.js'></script>
+ 	<script src='./Resources/pdfmake/vfs_fonts.js'></script>
+ 	<script src="./Reportes/reporteCategoria.js"></script>
+</body>
+</html>

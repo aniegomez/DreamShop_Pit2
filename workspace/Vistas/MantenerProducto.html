@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>
+        Intranet
+    </title>
+    <!-- CSS  -->
+    <style>
+    	td, th{padding: 1px !important;}
+    </style>
+    <link rel="stylesheet" type="text/css" href="./Resources/fontawesome-all.css">
+    <link href="./Resources/materialize/css/fonts.css" rel="stylesheet"/>
+    <link href="./Resources/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./Resources/vendors/DataTables-1.10.16/css/datatables.min.css" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- JQUERY  -->
+    <script src="./Resources/vendors/jquery/dist/jquery.js"></script>
+</head>
+
+<body>
+	<div style="padding: 1%; height: 100%;">
+		<div style="background-color: white; border-radius: 5px; border: 1px solid rgb(201, 201, 201);">
+			<script src="./Bloque/barraInternaHTML.js"></script>
+				<div class="row">
+					<div class="col s12">
+						<h1 class="col s12 center-align cyan-text" style="font-family: 'Playfair Display', serif;" >Mantenimiento Producto</h1>						
+					</div>
+
+					<div class="col s5">
+						<button type="button" class="waves-effect waves-light btn" id="btnCrearProducto">Crear Producto</button>
+						<br/><br/>
+					</div>
+					<div class="col s2">
+						<a href="javascript:;" id="reportePDF">
+							<i class="fas fa-file-pdf"  style="font-size: 30px !important; color: red"></i>
+						</a>
+						<br/><br/>
+					</div>
+					<div class="col s5" align="right">
+						<button type="button" class="waves-effect waves-light btn" id="btnModalAsignarDescuento">Asignar Descuento</button>
+						<br/><br/>
+					</div>
+
+					<div class="col s12">
+						<table id="tbProducto">
+							<thead>
+								<th>#</th>
+								<th>Categoría</th>
+								<th>Marca</th>
+								<th>Producto</th>
+								<th>Precio</th>
+								<th colspan="2">C/S Descuento</th>
+								<th></th>
+							</thead>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+    <div id="modalVerFoto" class="modal" style="width: 200px !important; height: 200px !important; overflow-y: hidden !important; border-radius: 20%;">
+        <div class="modal-content" style="overflow-y: hidden !important;">
+        	<img height="150" width="150" id="imagenProducto">
+        </div>
+    </div>
+
+    <div id="modalCrearProducto" class="modal modal-fixed-footer">
+    	<form id="formularioCrearProducto">
+	    	<div class="modal-content">
+	    		<h4>Crear Producto</h4>	    		
+	    			<div class="row">
+	    				<div class="col s12">	    					
+							<div class="input-field">
+								<label>Producto</label>
+								<input type="text" id="txtProductoC" pattern="[a-zA-Z]+(\s[a-zA-Z0-9]){0,}" title ="Ingrese Producto Valido" name="txtProducto" required="">								
+							</div>
+
+							<div class="input-field">
+								<label>Precio S/. </label>
+								<input type="number" id="txtPrecioC" name="txtPrecio" min="1" required="">
+							</div>
+
+						   	<div>
+						    	<label>Categoría</label>
+						     	<select id="cboCategoriaC" name="cboCategoria" required class="browser-default">
+						      		<option value="" disabled selected>[Seleccione]</option>
+						    	</select>  					
+						  	</div>
+						   	<div>
+						    	<label>Marca</label>
+						     	<select id="cboMarcaC" name="cboMarca" required class="browser-default">
+						      		<option value="" disabled selected>[Seleccione]</option>
+						    	</select>				
+						  	</div>
+	    				</div>
+	    			</div>    			    			
+	    		
+	    	</div>
+
+		    <div class="modal-footer">
+		      <button type="submit" class="waves-effect waves-green btn-flat ">Crear Nuevo</button>
+		    </div>
+	    </form>
+    </div>
+
+    <div id="modalActualizarProducto" class="modal modal-fixed-footer">
+    	<form id="formularioActualizarProducto">
+	    	<div class="modal-content">
+	    		<h4>Actualizar Producto</h4>	    		
+	    			<div class="row">
+	    				<div class="col s12">
+							<div class="input-field">
+								<label>Producto</label>
+								<input type="text" pattern="[a-zA-Z]+(\s[a-zA-Z0-9]){0,}" title ="Ingrese Producto Valido" id="txtProductoA" name="txtProducto" required="">
+								<input type="hidden" id="txtIdProductoA">
+							</div>
+
+							<div class="input-field">
+								<label>Precio S/. </label>
+								<input type="number" id="txtPrecioA" min="1" name="txtPrecio" required="">
+							</div>
+
+						   	<div>
+						    	<label>Categoría</label>
+						     	<select id="cboCategoriaA" name="cboCategoria" required class="browser-default">
+						      		<option value="" disabled selected>[Seleccione]</option>
+						    	</select>  					
+						  	</div>
+						   	<div>
+						    	<label>Marca</label>
+						     	<select id="cboMarcaA" name="cboMarca" required class="browser-default">
+						      		<option value="" disabled selected>[Seleccione]</option>
+						    	</select>				
+						  	</div>
+	    				</div>
+	    			</div>    			    			
+	    		
+	    	</div>
+
+		    <div class="modal-footer">
+		      <button type="submit" class="waves-effect waves-green btn-flat ">Actualizar</button>
+		    </div>
+	    </form>
+    </div>
+
+    <div id="modalAsignarDescuento" class="modal modal-fixed-footer">
+    	<div class="modal-content">
+    		<h4>Asignar Descuento</h4>
+			<table id="tbDescuento">
+				<thead>
+					<th>#</th>
+					<th>Descripcion</th>
+					<th>Porcentaje</th>
+					<th></th>
+				</thead>
+			</table>
+    	</div>
+    	<div class="modal-footer">
+    		<button class="waves-effect waves-green btn-flat" id="btnAsignarDescuento">Asignar</button>
+    	</div>
+    </div>
+
+	<!--  Scripts-->
+	<script src="./Resources/materialize/js/materialize.js"></script>
+	<script src="./Resources/vendors/DataTables-1.10.16/js/datatables.min.js"></script>
+	<script src="./Bloque/barraInternaJS.js"></script>	
+	<script src="./Bloque/MantenerProducto.js"></script>
+	<script src='./Resources/pdfmake/pdfmake.min.js'></script>
+ 	<script src='./Resources/pdfmake/vfs_fonts.js'></script>
+ 	<script src="./Reportes/reporteProductos.js"></script>		
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <title>
+        DreamShop - Intranet
+    </title>
+    <!-- CSS  -->
+    <link rel="stylesheet" type="text/css" href="./Resources/fontawesome-all.css">
+    <link href="./Resources/materialize/css/fonts.css" rel="stylesheet"/>
+    <link href="./Resources/materialize/css/materialize.min.css" rel="stylesheet" type="text/css"/>
+    <link href="./Resources/vendors/DataTables-1.10.16/css/datatables.min.css" rel="stylesheet"/>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- JQUERY  -->
+    <script src="./Resources/vendors/jquery/dist/jquery.js"></script>
+</head>
+<body>
+	<div style="padding: 1%; height: 100%;">
+		<div style="background-color: white; border-radius: 5px; border: 1px solid rgb(201, 201, 201);">
+			<script src="./Bloque/barraInternaHTML.js"></script>	
+
+			<div class="container">
+				<div class="row">
+					<div class="col s12">
+						<h1 class="col s12 center-align cyan-text">Intranet</h1>
+					</div>
+					<div class="col s4"></div>
+					<div class="col s4">						
+						<br/>
+						<br/>
+						<form id="formularioLoginInterno">
+							<div class="col s12">
+								<label for="usuario">Usuario:</label>
+								<input type="text" class="form-control" id="usuario" required>
+							</div>
+							<div class="col s12">
+								<label for="clave">Clave:</label>
+								<input type="password" class="form-control" id="clave" required>
+							</div>
+
+							<div class="col s12" align="center">
+								<button type="submit" class="waves-effect waves-light btn">INGRESAR</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--  Scripts-->
+	<script src="./Resources/materialize/js/materialize.js"></script>
+	<script src="./Resources/vendors/DataTables-1.10.16/js/datatables.min.js"></script>
+	<script src="./Bloque/barraInternaJS.js"></script>	
+	<script src="./Bloque/LoginInterno.js"></script>	
+</body>
+</html>
