@@ -49,7 +49,7 @@ function eventos()
 				else
 				{
 					Materialize.toast("Cambio exitoso", 5000);
-					window.location = "Principal.html";
+					window.location = "Inicio.html";
 				}
 			},
 			error: function(e1, e2, e3)

@@ -134,7 +134,7 @@ function eventos()
 							if(objPedido == null || objPedido == false)
 								window.location = "Inicio.html";
 							else
-								window.location = "GenerarPedido.html";
+								window.location = "RealizarPedido.html";
 						}
 					});
 				}

@@ -17,7 +17,7 @@ function mostrarBarraNavegacion()
     objUsuario  = sessionStorage.getItem("objUsuario");
     listaPagina = sessionStorage.getItem("listaPagina");
 
-    barra = usuario +'<div class="navbar-fixed">'+
+    barra = usuario +
     '<nav class="cyan darken-1" style="border-top-left-radius: 5px; border-top-right-radius: 5px; height: 40px;">' +
         '<div class="nav-wrapper" style="height: 100%;">';
             
@@ -74,8 +74,7 @@ function mostrarBarraNavegacion()
                 '</li>' +
             '</ul>' +
         '</div>' +
-    '</nav>'+
-    '</div>';
+    '</nav>';
 
     document.write(barra);
 
